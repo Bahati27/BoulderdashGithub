@@ -18,31 +18,31 @@ import fr.exia.showboard.BoardFrame;
 import entity.IMap;
 
 /**
- * The Class View.
+ * <h1> La classe View <h1>
  *
- * @author Arthur Caldeireiro based on the work of Jean-Aymeric Diet
+ * @author Benjamin
  */
 public final class View extends Observable implements IView, KeyListener {
 
-	/** The Game Windows (Frame) */
+	/** La fenetre du jeu (Frame) */
 	private BoardFrame boardFrame;
 
-	/** The Game View (Part of the map we see) */
+	/** La vue du jeu (partie de la carte que nous voyons) */
 	final Rectangle gameView = new Rectangle(0, 0, 11, 11);
 
-	/** The map. */
+	/** La carte. */
 	private IMap map;
 
-	/** The player */
+	/** Le joueur */
 	private IMobile myPlayer;
 
-	/** The order performer. */
+	/** L'exécutant de la commande. */
 	private IOrderPerformer orderPerformer;
 
 
 	/**
 	 * 
-	 * Instantiates a new View.
+	 * Constructeur de la classe view.
 	 * 
 	 * @param map
 	 * @param myPlayer
@@ -72,9 +72,9 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 *
-	 * @see fr.exia.insanevehicles.view.IInsaneVehiclesView#followmyPlayer()
+	 *
+	 * Deplacement du joueur par rapport à la carte.
 	 */
 	@Override
 	public final void followMyPlayer() {
@@ -87,7 +87,7 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/**
-	 *  Update the view with the new position of the frames
+	 *  Mettre à jour la vue avec la nouvelle position des cadres.
 	 */
 	public void updateView() {
 		for (int x = 0; x < this.getmap().getWidth(); x++) {
@@ -99,7 +99,7 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/**
-	 * Key code to user order.
+	 * Code clé pour la commande de l'utilisateur.
 	 *
 	 * @param keyCode the key code
 	 * @return the user order
@@ -127,11 +127,11 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/*
-	 * (non-Javadoc)
+	 * 
 	 *
-	 * @see
-	 * fr.exia.insanevehicles.view.IInsaneVehiclesView#displayMessage(java.lang.
-	 * String)
+	 * Affiche les différents message d'erreurs lors de l'ouverture de notre fenetre
+	 * 
+	 * 
 	 */
 	@Override
 	public final void displayMessage(final String message) {
@@ -146,9 +146,9 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.event.KeyListener#keyTyped(java.awt.event.KeyEvent)
+	 * Gérer l'ordre de type de touche à utiliser par l'utilisateur
+	 * 
 	 */
 	@Override
 	public void keyTyped(final KeyEvent keyEvent) {
@@ -161,9 +161,9 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.event.KeyListener#keyPressed(java.awt.event.KeyEvent)
+	 * 
+	 * Gérer le commande de touche pessée par l'utilisateur
 	 */
 	@Override
 	public final void keyPressed(final KeyEvent keyEvent) {
@@ -175,9 +175,9 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/*
-	 * (non-Javadoc)
 	 * 
-	 * @see java.awt.event.KeyListener#keyReleased(java.awt.event.KeyEvent)
+	 * 
+	 * 
 	 */
 	@Override
 	public void keyReleased(final KeyEvent keyEvent) {
@@ -185,19 +185,19 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/**
-	 * Gets the map.
+	 * Récupère la carte.
 	 *
-	 * @return the map
+	 * @return La carte
 	 */
 	private IMap getmap() {
 		return this.map;
 	}
 
 	/**
-	 * Display the map
+	 * Affiche la carte
 	 *
 	 * @param map the new map
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @throws IOException Signale qu'une exception s'est produite.
 	 */
 	private void setmap(final IMap map) throws IOException {
 		this.map = map;
@@ -209,16 +209,16 @@ public final class View extends Observable implements IView, KeyListener {
 	}
 
 	/**
-	 * Gets the player.
+	 * Récupère le joueur.
 	 *
-	 * @return the player
+	 * @return Le joueur
 	 */
 	private IMobile getmyPlayer() {
 		return this.myPlayer;
 	}
 
 	/**
-	 * Sets  the player.
+	 * Modifie le joueur.
 	 * 
 	 * @param myPlayer
 	 */
@@ -228,36 +228,36 @@ public final class View extends Observable implements IView, KeyListener {
 
 
 	/**
-	 * Gets the gameView.
+	 * Récupère la gameView(la vue du jeu).
 	 *
-	 * @return the gameView
+	 * @return la gameView(la vue du jeu)
 	 */
 	private Rectangle getgameView() {
 		return this.gameView;
 	}
 
 	/**
-	 * Gets the order performer.
+	 *  Récupère l'ordre de performance.
 	 *
-	 * @return the order performer
+	 * @return l'ordre de performance
 	 */
 	private IOrderPerformer getOrderPerformer() {
 		return this.orderPerformer;
 	}
 
 	/**
-	 * Sets the order performer.
+	 * Modifie l'ordre de performance.
 	 *
-	 * @param orderPerformer the new order performer
+	 * @param orderPerformer nouvel ordre de performance
 	 */
 	public final void setOrderPerformer(final IOrderPerformer orderPerformer) {
 		this.orderPerformer = orderPerformer;
 	}
 
 	/**
-	 * Gets the order BoardFrame.
+	 * Récupère l'ordre BoardFrame.
 	 *
-	 * @return the BoardFrame
+	 * @return le BoardFrame
 	 */
 	public BoardFrame getBoardFrame() {
 		return boardFrame;
