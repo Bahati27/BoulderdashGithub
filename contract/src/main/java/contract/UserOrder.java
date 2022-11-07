@@ -1,7 +1,7 @@
 package contract;
 /**
- * 
- * @author Kelvin
+ * <h1> La classe enumeratrice UserOrder </h1>
+ * @author Lyba
  *
  */
 public enum UserOrder {

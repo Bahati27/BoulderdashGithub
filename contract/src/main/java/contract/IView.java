@@ -2,8 +2,8 @@ package contract;
 
 import fr.exia.showboard.BoardFrame;
 /**
- * 
- * @author Kelvin
+ * <h1> L'interface IView </h1>
+ * @author Lyba
  *
  */
 public interface IView {

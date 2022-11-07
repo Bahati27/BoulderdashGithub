@@ -1,8 +1,8 @@
 package contract;
 import java.io.IOException;
 /**
- * 
- * @author Kelvin
+ * <h1> L'interface IOrderPerformer </h1>
+ * @author Lyba
  *
  */
 public interface IOrderPerformer {

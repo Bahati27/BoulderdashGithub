@@ -37,6 +37,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jeanc/Documents/DOSSIER_PROSIT/X2/Semestre 1/Module_JAVA/Solution/JPU-BlankProject V/JPU-BlankProject/Sprite/showboard.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Jean mabagwa/Documents/Projets/ProjetJava/Ressource/JPU-BlankProject/JPU-BlankProject/Sprite/showboard.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

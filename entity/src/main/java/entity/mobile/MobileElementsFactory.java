@@ -32,7 +32,7 @@ public class MobileElementsFactory {
 	 * 2. on va utiliser cette methode pour lire le symobe provenant du fichier text
 	 */
 	/**
-	 * Methode pour obtenir un character provenant du fichier
+	 * Methode pour obtenir un character provenant du fichier txt
 	 * @param fileSymbol
 	 * @return l'element mobile
 	 */

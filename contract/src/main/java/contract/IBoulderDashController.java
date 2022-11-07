@@ -1,7 +1,7 @@
 package contract;
 /**
- * 
- * @author Kelvin
+ * <h1> L'interface IBoulderDashController </h1>
+ * @author Lyba
  *
  */
 public interface IBoulderDashController {

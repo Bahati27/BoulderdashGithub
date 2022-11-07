@@ -3,8 +3,8 @@ package contract;
 import entity.IMap;
 import entity.mobile.IMobile;
 /**
- * 
- * @author Kelvin
+ * <h1> L'interface IModel </h1>
+ * @author Lyba
  *
  */
 public interface IModel {
