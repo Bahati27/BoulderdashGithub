@@ -1,17 +1,19 @@
 package contract;
 
+import fr.exia.showboard.BoardFrame;
 /**
- * The Interface IView.
+ * 
+ * @author Kelvin
  *
- * @author Jean-Aymeric Diet
  */
 public interface IView {
 
-	/**
-	 * Prints the message.
-	 *
-	 * @param message
-	 *          the message
-	 */
-	void printMessage(final String message);
+	void displayMessage(final String message);
+	
+	void followMyPlayer();
+
+	void updateView();
+
+	BoardFrame getBoardFrame();
+
 }
