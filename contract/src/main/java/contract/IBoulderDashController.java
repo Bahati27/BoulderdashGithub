@@ -1,7 +1,7 @@
 package contract;
 /**
  * 
- * @author Kelvin
+ * @author Jean Marie
  *
  */
 public interface IBoulderDashController {

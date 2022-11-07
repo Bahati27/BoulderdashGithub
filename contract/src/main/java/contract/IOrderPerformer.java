@@ -2,7 +2,7 @@ package contract;
 import java.io.IOException;
 /**
  * 
- * @author Kelvin
+ * @author Jean Marie
  *
  */
 public interface IOrderPerformer {

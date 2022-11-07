@@ -15,21 +15,20 @@ import java.util.List;
 import java.util.Observable;
 
 /**
- * <h1>The Map Class.</h1>
+ * <h1>La classe Map.</h1>
  *
- * @author Laetitia
- * @version 0.1
+ * @author Benjamin
  */
 
 class Map extends Observable implements IMap {
 
-	/** The width. */
+	/** La longueur. */
 	private int width;
 
-	/** The height. */
+	/** La hauteur. */
 	private int height;
 
-	/** The on the map. */
+	/** Liste des élément sur la carte. */
 	private IElement[][] onTheMap;
 
 	private boolean isCorrect = true;
@@ -37,10 +36,10 @@ class Map extends Observable implements IMap {
 	private List<Integer> hasChanged = new ArrayList<Integer>();
 
 	/**
-	 * Instantiates a new map with the content of the file fileName.
+	 * Constructeur de la classe Map.
 	 *
-	 * @param fileName the file name where the map is
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param fileName le nom du fichier où se trouve la carte
+	 * @throws IOException Signale qu'une exception s'est produite.
 	 */
 	Map(final String fileName) throws IOException {
 		super();
@@ -48,12 +47,15 @@ class Map extends Observable implements IMap {
 	}
 
 	/**
-	 * Loads file.
+	 * Charger le fichier.
 	 *
-	 * @param fileName the file name
-	 * @throws IOException Signals that an I/O exception has occurred.
+	 * @param fileName le nom du fichier
+	 * @throws IOException Signale qu'une exception s'est produite.
 	 */
 	private void loadFile(final String fileName) throws IOException {
+		// BufferedReader utilisée pour simplifier la lecture de texte à partir de flux d'entrée de caractères
+		//InputStreamReader établit un pont entre les flux d'octets et les flux de caractères.
+		//FileInputStream permet d'ouvrir un fichier en lecture et d'en lire le contenu.
 		final BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(fileName)));
 		String line;
 
@@ -95,7 +97,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/*
-	 * Gets element on the map
+	 * Définit les éléments de la liste
 	 *
 	 */
 	@Override
@@ -104,11 +106,11 @@ class Map extends Observable implements IMap {
 	}
 
 	/**
-	 * Sets the on the map XY.
+	 * Modifie et rajoute les éléments de la liste sur la carte.
 	 *
-	 * @param element the element
-	 * @param x       the x
-	 * @param y       the y
+	 * @param element les éléments
+	 * @param x       l'axe de X
+	 * @param y       l'axe de Y
 	 */
 	public void setOnTheMapXY(IElement element, int x, int y) {
 		this.onTheMap[x][y] = element;
@@ -118,7 +120,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/*
-	 * Sets the mobile has changed
+	 * Change la position des éléments mobiles
 	 *
 	 */
 	@Override
@@ -128,7 +130,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/*
-	 * Gets the width
+	 * Récupère la longueur
 	 * 
 	 */
 	@Override
@@ -137,7 +139,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/**
-	 * Sets the width.
+	 * Modifie la longueur.
 	 *
 	 * @param width the new width
 	 */
@@ -146,7 +148,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/*
-	 * Gets the height
+	 * Récupère la hauteur
 	 * 
 	 */
 	@Override
@@ -155,7 +157,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/**
-	 * Sets the height.
+	 * Modifie la hauteur.
 	 *
 	 * @param height the new height
 	 */
@@ -164,7 +166,7 @@ class Map extends Observable implements IMap {
 	}
 
 	/*
-	 * Gets the observable
+	 * Récupère l'observable
 	 * 
 	 */
 	@Override

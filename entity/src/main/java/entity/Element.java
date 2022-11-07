@@ -3,7 +3,12 @@ package entity;
 import java.awt.Image;
 
 public abstract class Element implements IElement {
-
+	
+	/**
+	 *   <h1> La classe Element </h1>
+	 * @author Benjamin
+	 *
+	 */
 
     /**
      * Le sprite

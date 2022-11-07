@@ -4,7 +4,7 @@ import entity.IMap;
 import entity.mobile.IMobile;
 /**
  * 
- * @author Kelvin
+ * @author Jean Marie
  *
  */
 public interface IModel {
