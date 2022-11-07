@@ -1,32 +1,40 @@
 package entity.mobile;
+/**
+ * <h1>La classe MobileElementsFactory </h1>
+ * @author Benjamin
+ *
+ */
 public class MobileElementsFactory {
 
 	/**
-	 * The Green Monster 
+	 * Le monstre vert
 	 */
 	private final static MonsterG monsterG = new MonsterG();
 	/**
-	 * The Red Monster
+	 * Le monstre rouge
 	 */
 	private final static MonsterR monsterR = new MonsterR();
 	/**
-	 * The diamond
+	 * Le diamand
 	 */
 	private final static Diamond diamond = new Diamond();
 	/**
-	 * The rock
+	 * Le rocher
 	 */
 	private final static Boulder boulder = new Boulder();
 
 	/**
-	 * The list of mobile elements
+	 * La liste des elements mobile
 	 */
 	private static Mobile[] mobileElements = { monsterR, monsterG, diamond, boulder};
-
+	/*
+	 * 1. on a intacié tout les elements dans une liste
+	 * 2. on va utiliser cette methode pour lire le symobe provenant du fichier text
+	 */
 	/**
-	 * Gets char from file
+	 * Methode pour obtenir un character provenant du fichier
 	 * @param fileSymbol
-	 * @return
+	 * @return l'element mobile
 	 */
 	public static Mobile getFromFileSymbol(final char fileSymbol) {
 		for (final Mobile mobileElement : mobileElements) {
@@ -38,32 +46,32 @@ public class MobileElementsFactory {
 	}
 
 	/**
-	 * creates Red Monster
-	 * @return Red Monster
+	 * La creation du monstre rouge
+	 * @return le monstre rouge
 	 */
 	public static Mobile createMonsterR() {
 		return monsterR;
 	}
 	
 	/**
-	 * creates Green Monster
-	 * @return Green Monster
+	 * La creation du monstre vert
+	 * @return le monstre vert
 	 */
 	public static Mobile createMonsterG() {
 		return monsterG;
 	}
 
 	/**
-	 * creates diamond
-	 * @return
+	 * La creation de diamand
+	 * @return le diamand
 	 */
 	public static Mobile createDiamond() {
 		return diamond;
 	}
 
 	/**
-	 * creates rock
-	 * @return
+	 * La creation des roches
+	 * @return la roche
 	 */
 	public static Mobile createRock() {
 		return boulder;

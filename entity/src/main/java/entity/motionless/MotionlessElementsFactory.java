@@ -1,10 +1,9 @@
 package entity.motionless;
 
 /**
- * <h1>A factory to create MotionlessElements objects.</h1>
+ * <h1>La classe MotionlessElements</h1>
  *
- * @author Laetitia
- * @version 0.1
+ * @author Benjamin
  */
 public abstract class MotionlessElementsFactory {
 
@@ -14,48 +13,46 @@ public abstract class MotionlessElementsFactory {
 	private static final Ground ground = new Ground();
 
 	/**
-	 * The motionless elements is an array of all possible MotionlessElement.
+	 * La liste des elements possible appartenant au motionlessElements(elements statics)
 	 */
 	private static MotionlessElement[] motionlessElements = {wall, background, door, ground};
 
 	/**
-	 * creates the wall
-	 * @return
+	 * La creation du mur
+	 * @return wall
 	 */
 	public static MotionlessElement createWall() {
 		return wall;
 	}
 
 	/**
-	 * creates the door
-	 * @return
+	 * La creation de la porte
+	 * @return door
 	 */
 	public static MotionlessElement createDoor() {
 		return door;
 	}
 
 	/**
-	 * creates the background
-	 * @return
+	 * La creation du fonds
+	 * @return background
 	 */
 	public static MotionlessElement createBackground() {
 		return background;
 	}
 	
 	/**
-	 * 
-	 * creates the ground
-	 * @return
+	 * La creation du sol
+	 * @return ground
 	 */
 	public static MotionlessElement createGround() {
 		return ground;
 	}
 
 	/**
-	 * Gets the good MotionlessElement from file symbol.
-	 *
-	 * @param fileSymbol the file symbol
-	 * @return the from file symbol
+	 * Methode permettant d'obtenir le symbole se retrouvant sur la carte
+	 * @param fileSymbol
+	 * @return background
 	 */
 	public static MotionlessElement getFromFileSymbol(final char fileSymbol) {
 		for (final MotionlessElement motionlessElement : motionlessElements) {

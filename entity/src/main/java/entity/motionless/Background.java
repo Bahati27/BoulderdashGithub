@@ -2,18 +2,22 @@ package entity.motionless;
 
 import entity.Permeability;
 import entity.Sprite;
+import entity.mobile.Diamond;
 
 /**
- * @author Laetitia
+ * <h1> La classe Background </h1>
+ * @author Benjamin
  *
  */
 public class Background extends MotionlessElement{
 	
-	/** The Constant SPRITE. */
+	/** La declaration de la Constante SPRITE pour definir le fond */
     private static final Sprite SPRITE = new Sprite('.', "Background.png");
 
     /**
-     * Instantiates a new background.
+     * L'instationtion du fond
+     * @see Background
+     * @return WALKABLE
      */
     Background() {
         super(SPRITE, Permeability.WALKABLE);

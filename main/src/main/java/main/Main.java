@@ -1,6 +1,5 @@
 /**
- * @author Laetitia, Arthur, Anthony
- * @version 1.0.8
+ * @author Kelvin, Benjamin, Lyba
  */
 package main;
 
@@ -18,9 +17,9 @@ import view.View;
 import javax.swing.*;
 
 /**
- * The Class Main.
+ * <h1> La classe Principale(Main) </h1>
  *
- * @author Laetitia, Arthur, Anthony
+ * @author Kelvin, Benjamin, Lyba
  */
 public abstract class Main {
 
@@ -32,8 +31,7 @@ public abstract class Main {
     private static  IBoulderDashController controller;
 
     /**
-     * The main method.
-     *
+     * La methode principale(main)
      * @param args
      * @throws IOException
      * @throws InterruptedException
@@ -53,7 +51,7 @@ public abstract class Main {
         for (String filename : filenames) {
             file = new File(filename);
             if (!file.exists()){
-                JOptionPane.showMessageDialog(null, "File \"" + filename + "\" is missing.\nPlease put the file back in its place and then restart.", "BoulderDash - Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Le fichier \"" + filename + "\" n'est pas retouvé.\nS'il vous plait, place le fichier au bon endroit et recommancer.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                 System.exit(0);
                 return;
             }
@@ -62,7 +60,7 @@ public abstract class Main {
 
     static void menu() {
 
-        int choice = JOptionPane.showInternalConfirmDialog(null, "Do you want to load a map from database?", "BloulderDash - Menu",JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
+        int choice = JOptionPane.showInternalConfirmDialog(null, "Veux-tu charger la carte de la base de données ?", "BloulderDash - Menu",JOptionPane.YES_NO_OPTION, JOptionPane.PLAIN_MESSAGE);
         DAOMap databaseConnection = null;
         Object[] maps = null;
 
@@ -70,24 +68,24 @@ public abstract class Main {
             try {
                 databaseConnection = new DAOMap();
             } catch (ClassNotFoundException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Can't connect to database!\nLaunching game without loading a new map.", "BoulderDash - Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vous ne pouvez pas vous connecter à la base de donnéese!\nVoulez-vous lancer le jeu sans charger la carte.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
             try {
                 maps = databaseConnection.getLevels();
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, "Can't retrieve map from database!\nLaunching game without loading a new map.", "BoulderDash - Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vous ne pouvez-pas retirer la carte de la base de données!\nLancer le jeux sans charger la carte.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
-            String map = (String)JOptionPane.showInputDialog(null, "Which map do you want to load?", "BoulderDash - Load map", JOptionPane.PLAIN_MESSAGE, null, maps, maps[0]);
+            String map = (String)JOptionPane.showInputDialog(null, "Quelle carte voulez-vous charger?", "BoulderDash - Carte chargée", JOptionPane.PLAIN_MESSAGE, null, maps, maps[0]);
 
             if (map != null) {
                 try {
                     databaseConnection.loadlevel(filenames[0], map);
                 } catch ( SQLException | IOException e) {
-                    JOptionPane.showMessageDialog(null, "Can't load map into map file!\nLaunching game without loading a new map.", "BoulderDash - Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Vous ne pouvez pas charger la carte dans votre fichier txt!\nLancer le jeux sans charger la nouvel carte.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
             }
@@ -108,7 +106,7 @@ public abstract class Main {
                 controller.play();
 
             } else {
-                JOptionPane.showMessageDialog(null, "The map isn't in the right format!\nCheck your map file (map.txt).", "BoulderDash - Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "La carte n'est pas dans le bon format!\nVerifier le fichier (map.txt).", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }

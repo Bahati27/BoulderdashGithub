@@ -4,19 +4,20 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * <h1> The Diamond class</h1>
- * @author Laetitia
+ * <h1> La classe diamand </h1>
+ * @author Benjamin
  *
  */
 public class Diamond extends Mobile{
 
-	/** The Constant SPRITE. */
+	/** La declaration de la Constante SPRITE pour definir le diamand */
 	private static final Sprite SPRITE = new Sprite('*', "diamond.png");
 
-
 	/**
-	 * Instantiates a new obstacle.
-	 */
+     * L'instationtion du diamand
+     * @see Diamand
+     * @return DIAMOND
+     */
 	 Diamond() {
 		super(SPRITE, Permeability.DIAMOND);
 	}
@@ -24,21 +25,21 @@ public class Diamond extends Mobile{
 
 	@Override
 	public void win() {
-		// TODO Auto-generated method stub
 		return;
 	}
 
 	/**
-	 * Gets the diamonds
+	 * Methode pour l'obtention de diamand
+	 * @see getDiamonds
 	 */
 	@Override
 	public int getDiamonds() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	/**
-	 *Gets the diamonds
+	 * Methode pour l'obtention de diamand en horizontale
+	 * @see grabDiamond
 	 */
 	@Override
 	public void grabDiamond() {

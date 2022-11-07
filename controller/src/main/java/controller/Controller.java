@@ -14,8 +14,8 @@ import entity.Permeability;
 import entity.mobile.MobileElementsFactory;
 import entity.motionless.MotionlessElementsFactory;
 /**
- * 
- * @author Benjamin
+ * <h1> La classe Controller </h1>
+ * @author Kelvin
  *
  */
 public final class Controller implements IBoulderDashController, IOrderPerformer,Runnable {
@@ -23,9 +23,6 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     private static final int speed = 200;
     private static final int PAUSE = 600;
     private int compteur;
-    public int getCompteur() {
-		return compteur;
-	}
 	private IView view;
     private IModel model;
     private UserOrder stackOrder;
@@ -312,7 +309,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * Monster Move Right method
+     * La methode permettant le deplacement du monstre rouge vers la droite
+     * @see MRMoveRight
      */
     public void MRMoveRight(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x + 1, y).getPermeability() == Permeability.WALKABLE) {
@@ -322,7 +320,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Left method
+     * La methode permettant le deplacement du monstre rouge vers la gauche
+     * @see MRMoveLeft
      */
     public void MRMoveLeft(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x - 1, y).getPermeability() == Permeability.WALKABLE) {
@@ -332,7 +331,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Up method
+     * La methode permettant le deplacement du monstre rouge vers le haut
+     * @see MRMoveUp
      */
     public void MRMoveUp(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x, y - 1).getPermeability() == Permeability.WALKABLE) {
@@ -342,7 +342,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * MonsterR Move Down method
+     * * La methode permettant le deplacement du monstre rouge vers le bas
+     * @see MRMoveDown
      */
     public void MRMoveDown(int x, int y) {
         if (this.getModel().getMap().getOnTheMapXY(x, y).getSprite().getConsoleImage() == 'R' && this.getModel().getMap().getOnTheMapXY(x, y + 1).getPermeability() == Permeability.WALKABLE) {
@@ -353,6 +354,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
 
 
     /**
+     * La methode permettant de retourner la vue provenant de l'interface IView
+     * @see IView
      * @return this.view
      */
     private IView getView() {
@@ -360,6 +363,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant de modifier la vue
+     * @see setView
      * @param view
      */
     private void setView(final IView view) {
@@ -367,6 +372,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant d'obtenir le model
+     * @see getModel
      * @return this.model
      */
     private IModel getModel() {
@@ -374,6 +381,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant de modifier la vue
+     * @see setModel
      * @param model
      */
     private void setModel(final IModel model) {
@@ -381,6 +390,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant d'obtenir la valeur donner par le joueur
+     * @see UserOrder
      * @return this.stackOrder
      */
     private UserOrder getStackOrder() {
@@ -388,6 +399,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant de modifier l'ordre donner par le joueur
+     * @see setStackOrder
      * @param stackOrder
      */
     private void setStackOrder(final UserOrder stackOrder) {
@@ -395,6 +408,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
+     * La methode permettant d'initiliser les ordres de le joueur
+     * @see User0rder
      * clearStackOrder method
      */
     private void clearStackOrder() {
@@ -402,7 +417,8 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * getOrderPerformer method
+     * La methode permettant d'obtenir les interpretations des ordres faitent par le joueur
+     * @see getOrderPerformer
      */
     @Override
     public IOrderPerformer getOrderPerformer() {
@@ -410,12 +426,24 @@ public final class Controller implements IBoulderDashController, IOrderPerformer
     }
 
     /**
-     * orderPerform method
+     * @see IOrderPerformer
+     * @param orderPerform
      */
     @Override
     public final void orderPerform(final UserOrder userOrder) throws IOException {
         this.setStackOrder(userOrder);
     }
+    /**
+     * La methode permettant d'obtenir le compteur
+     * @return compteur
+     */
+    public int getCompteur() {
+		return compteur;
+	}
+    /**
+     * La methode servant de compteur de temps
+     * @see run
+     */
 	@Override
 	public void run() {
 		while(true) {

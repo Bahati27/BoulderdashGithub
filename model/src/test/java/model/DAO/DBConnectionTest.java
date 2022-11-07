@@ -9,7 +9,8 @@ import org.junit.Test;
 
 
 /**
- * @author Laetitia
+ * <h1> La classe DBConnectionTest </h1>
+ * @author Kelvin
  *
  */
 public class DBConnectionTest {
@@ -17,7 +18,7 @@ public class DBConnectionTest {
 	DBConnection DBC;
 	final String USER = "root";
 	final String PASSWD = "";
-	final String URL = "jdbc:mysql://localhost/javabdd?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&autoReconnect=true&useSSL=false";
+	final String URL = "jdbc:mysql://localhost/jpublankproject1?autoReconnect=true&useSSL=false";
 	
 
 	/**
@@ -30,7 +31,7 @@ public class DBConnectionTest {
 	}
 
 	/**
-	 * Test the connection
+	 * Test sur la connection
 	 * @throws SQLException
 	 */
 	@Test
@@ -39,7 +40,7 @@ public class DBConnectionTest {
 	}
 
 	/**
-	 * test the get url
+	 * test pour recevoir l'url
 	 * @throws SQLException
 	 */
 	@Test
@@ -48,7 +49,7 @@ public class DBConnectionTest {
 	}
 	
 	/**
-	 * test the get user
+	 * test pour recevoir l'utilisateur(user)
 	 * @throws SQLException
 	 */
 	@Test
@@ -57,7 +58,7 @@ public class DBConnectionTest {
 	}
 	
 	/**
-	 * test the get passeword
+	 * test pour recevoir le mot de passe
 	 * @throws SQLException
 	 */
 	@Test
@@ -67,7 +68,7 @@ public class DBConnectionTest {
 	
 	
 	/**
-	 * test the get instance
+	 * test pour recevoir les instances
 	 */
 	@Test
 	public void testGetInstance() {

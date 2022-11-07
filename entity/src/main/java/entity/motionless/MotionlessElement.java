@@ -5,18 +5,17 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * <h1> La classe MotionlessElment </h1>
+ * @author Benjamin
  *
  */
 public class MotionlessElement extends Element {
 	
 	/**
-     * Instantiates a new motionless element.
-     *
+	 * Constructeur MotionlessElement
+     * Instanciation d'un nouvel element motionless
      * @param sprite
-     *            the sprite
      * @param permeability
-     *            the permeability
      */
     MotionlessElement(final Sprite sprite, final Permeability permeability) {
         super(sprite, permeability);

@@ -1,26 +1,32 @@
 package entity;
 
 /**
- * <h1>The Permeability Enum.</h1>
+ * <h1>La class enumeratrice Permeability.</h1>
  *
- * @author Laetitia
- * @version 0.1
+ * @author Benjamin
  */
 public enum Permeability {
 
-	/** The blocking. */
+	/** Le mur.
+	 * @return wall */
 	WALL,
-	/** The penetrable. */
+	/** Accessible pour la marche.
+	 * @return walkable */
 	WALKABLE,
-	/** The killing. */
+	/** Tuable 
+	 * @return killable*/
 	KILLABLE,
-	/** The pushing. */
+	/** Rocher. 
+	 * @return boulder*/
 	BOULDER,
-	/** The win. */
+	/** La sortie.
+	 * @return exit */
 	EXIT,
-	/** The diggable. */
+	/** Creusable
+	 * @return diggable */
 	DIGGABLE,
-	/** The diamond. */
+	/** Le diamand
+	 * @return diamond*/
 	DIAMOND;
 
 }

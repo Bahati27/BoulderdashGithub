@@ -22,7 +22,7 @@ public class DBConnection {
 	/**
 	 * the password 
 	 */
-	private static String PASSWD = "";
+	private static String PASSWD = "123456789";
 
 	private Connection connection = null;
 
@@ -42,7 +42,7 @@ public class DBConnection {
 	 * Connects to the database
 	 */
 	public void connect() throws ClassNotFoundException, SQLException {
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		connection=DriverManager.getConnection(URL, USER, PASSWD);
 	}
 	

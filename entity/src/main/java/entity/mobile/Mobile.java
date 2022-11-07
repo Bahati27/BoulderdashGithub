@@ -9,28 +9,35 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * <h1>The Mobile Class.</h1>
- * @version 0.3
+ * <h1>La classe Mobile </h1>
+ * @author Benjamin
  */
 abstract class Mobile extends Element implements IMobile {
 
 	/**
-	 * The XY
+	 * La declaration de la position :XY
+	 * @see Point
+	 * @return position
 	 */
 	private Point position;
 
-	/** The alive. */
+	/** La vie
+	 * @return alive 
+	 */
 	private Boolean alive = true;
 
-	/** The road. */
+	/** La carte 
+	 * @see IMap
+	 */
 	private IMap map;
 
-	/** The board. */
+	/** Le tableau
+	 * @see IBoard 
+	 */
 	private IBoard board;
 
 	/**
-	 * Instantiates a new mobile.
-	 *
+	 * Instaciation d'un nouvelle element mobile
 	 * @param sprite
 	 * @param map
 	 * @param permeability
@@ -42,8 +49,7 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Instantiates a new mobile.
-	 * 
+	 * Instaciation d'un nouvelle element mobile
 	 * @param sprite
 	 * @param permeability
 	 */
@@ -53,8 +59,7 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Instantiates a new mobile.
-	 *
+	 * Instaciation d'un nouvelle element mobile
 	 * @param x
 	 * @param y
 	 * @param sprite
@@ -67,8 +72,9 @@ abstract class Mobile extends Element implements IMobile {
 		this.setY(y);
 	}
 
-	/*
-	 * Move up
+	/**
+	 * Methode pour deplacement vers le haut
+	 * @see moveUp
 	 * 
 	 */
 	@Override
@@ -77,9 +83,9 @@ abstract class Mobile extends Element implements IMobile {
 		this.setHasMoved();
 	}
 
-	/*
-	 * Move left
-	 * 
+	/**
+	 * Methode pour deplacement vers la gauche
+	 * @see moveLeft
 	 */
 	@Override
 	public void moveLeft() {
@@ -87,8 +93,9 @@ abstract class Mobile extends Element implements IMobile {
 		this.setHasMoved();
 	}
 
-	/*
-	 * Move down
+	/**
+	 * Methode pour deplacement vers le bas
+	 * @see moveDown
 	 * 
 	 */
 	@Override
@@ -97,9 +104,9 @@ abstract class Mobile extends Element implements IMobile {
 		this.setHasMoved();
 	}
 
-	/*
-	 * Move right
-	 * 
+	/**
+	 * Methode pour deplacement vers la droite
+	 * @see moveRight
 	 */
 	@Override
 	public void moveRight() {
@@ -107,9 +114,9 @@ abstract class Mobile extends Element implements IMobile {
 		this.setHasMoved();
 	}
 
-	/*
-	 * do nothing
-	 * 
+	/**
+	 * Methode pour verifier si l'element ne bouge pas Ne fait rien
+	 * @see doNothing
 	 */
 	@Override
 	public void doNothing() {
@@ -117,15 +124,16 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Sets the has moved.
+	 * Methode pour definir si l'element a changer
+	 * @see setHasMoved
 	 */
 	protected void setHasMoved() {
 		this.getMap().setMobileHasChanged();
 	}
 
-	/*
-	 * Gets the X
-	 * 
+	/**
+	 * Methode pour Obtenir X
+	 * @see getX
 	 */
 	@Override
 	public final int getX() {
@@ -133,18 +141,19 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Sets the x.
+	 * Methode pour modifier X
 	 *
-	 * @param x the new x
+	 * @param new x
+	 * @see setX
 	 */
 	public final void setX(final int x) {
 		this.getPosition().x = x;
 
 	}
 
-	/*
-	 * Gets the Y
-	 * 
+	/**
+	 * Methode pour Obtenir Y
+	 * @see getY
 	 */
 	@Override
 	public final int getY() {
@@ -152,9 +161,10 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Sets the y.
+	 *  Methode pour modifier y.
 	 *
 	 * @param y
+	 * @see setY
 	 */
 	public final void setY(final int y) {
 		this.getPosition().y = y;
@@ -162,26 +172,27 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Gets the map.
-	 *
-	 * @return the map
+	 * Methode pour Obtenir le map.
+	 * @see IMap
+	 * @return map
 	 */
 	public IMap getMap() {
 		return this.map;
 	}
 
 	/**
-	 * Sets the map.
-	 *
+	 * Methode pour modifier le map.
+	 * 
 	 * @param map the new map
+	 * @see setMap
 	 */
 	private void setMap(final IMap map) {
 		this.map = map;
 	}
 
-	/*
-	 * 
-	 * 
+	/**
+	 * Methode pour verifier si le joueur, le monstre est en vie
+	 * @return this.alive	 
 	 */
 	@Override
 	public Boolean isAlive() {
@@ -189,16 +200,17 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Dies.
+	 * Methode pour verifier si le joueur, le monstre est mort
+	 * @see die
 	 */
 	public void die() {
 		this.alive = false;
 		this.setHasMoved();
 	}
 
-	/*
-	 * Gets the position
-	 * 
+	/**
+	 * Methode pour obtenir la position
+	 * @return this.position
 	 */
 	@Override
 	public Point getPosition() {
@@ -206,18 +218,19 @@ abstract class Mobile extends Element implements IMobile {
 	}
 
 	/**
-	 * Sets the position.
+	 * Methode pour modifier la position.
 	 *
-	 * @param position the position to set
+	 * @see Point
+	 * @param position
 	 */
 	public void setPosition(final Point position) {
 		this.position = position;
 	}
 
 	/**
-	 * Gets the board.
+	 * Methode pour obtenir le tableau
 	 *
-	 * @return the board
+	 * @return board(tableau)
 	 */
 	protected IBoard getBoard() {
 		return this.board;

@@ -3,22 +3,21 @@ package model.DAO;
 import org.junit.Test;
 
 /**
- * @author Laetitia
+ * <h1> La classe DAOMapTest </h1>
+ * @author Kelvin
  *
  */
 public class DAOMapTest {
 
 
 	DAOMap dao ;
-	private String mapFile = "map.txt";
-
+	private String monFichier = "map.txt";
 	/**
-	 * Test for level 0
+	 * Test pour le niveau 0
 	 * @throws Exception
 	 */
 	@Test(expected = Exception.class)
 	public void testApplyToMap() throws Exception {
-		this.dao.loadlevel(mapFile, "0");
+		this.dao.loadlevel(monFichier, "0");
 	}
-
 }

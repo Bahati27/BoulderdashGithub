@@ -8,87 +8,89 @@ import fr.exia.showboard.*;
 import entity.IElement;
 
 /**
- * <h1>The Interface IMobile.</h1>
+ * <h1>L'Interface IMobile</h1>
+ * @author Benjamin
  * @see IPawn
  * @see IElement
  */
 public interface IMobile extends IPawn, IElement {
 
     /**
-     * Move up.
+     * Methode pour le deplacement vers le haut
      */
     void moveUp();
 
     /**
-     * Move left.
+     * Methode pour le deplacement vers la gauche
      */
     void moveLeft();
 
     /**
-     * Move down.
+     * Methode pour le deplacement vers le bas
      */
     void moveDown();
 
     /**
-     * Move right.
+     * Methode pour le deplacement vers la droite
      */
     void moveRight();
 
     /**
-     * Do nothing.
+     * Methode que l'on utilisera lorsque le joueur ne fait rien
      */
     void doNothing();
     /**
-     * Gets the x.
-     *
+     * Methode pour obtenir l'axe des abscisses
      * @return the x
      */
     @Override
     int getX();
 
     /**
-     * Gets the y.
-     *
+     * Methode pour obtenir l'axe des ordonnées
      * @return the y
      */
     @Override
     int getY();
 
     /**
-     * Checks if is alive.
-     *
-     * @return the alive
+     *	Methode pour verifier si le joueur est en vie
+     * @return alive
      */
     Boolean isAlive();
 
 
     /**
-     *Gets the position
+     * Methode pour obtenir la position
+     * @see getPosition
      */
     @Override
     Point getPosition();
 
 	/**
-	 * Die
+	 * Methode pour definir si le joueur ou le monstre est mort 
+	 * @see die
 	 */
 	public void die();
 
     /**
-     * Win
+     * Methode pour definir si le joueur a gagné
+     * @see win
      */
     public void win();
 	
 	/**
-	 * Gets diamonds
+	 * Methode pour obtenir le diamand
+	 * @see getDiamonds
 	 * @return int
 	 * 
 	 */
 	public int getDiamonds();
 
     /**
-     * Gets diamond
+     * Methode pour obtenir le diamand horizontalement
+     * @see grabDiamond
      * @return int
-     *
      */
     public void grabDiamond();
 

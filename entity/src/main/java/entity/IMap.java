@@ -4,58 +4,64 @@ import java.util.List;
 import java.util.Observable;
 
 /**
- * <h1>The Interface IMap.</h1>
+ * <h1>L'interface IMap.</h1>
  *
- * @author Laetitia
- * @version 0.1
+ * @author Benjamin
  */
 public interface IMap {
 
     /**
-     * Gets the width.
-     *
-     * @return the width
+     * Methode d'obtention de la longueur
+     * @see getWidth
+     * @return le width(la longueur)
      */
     int getWidth();
 
     /**
-     * Gets the height.
-     *
-     * @return the height
+     * Methode d'obtention de la largeur
+     * @see getHeight
+     * @return le Height(la largeur)
      */
     int getHeight();
 
     /**
-     * Gets on the map XY.
-     *
+     * Methode d'obtention les elements sur la cartes/map
+     * l'axe des abscisses
      * @param x
-     *            the x
+     * l'axe des ordonnées
      * @param y
-     *            the y
+     * @see getOnTheMapXY
      * @return the on the road XY
      */
     IElement getOnTheMapXY(int x, int y);
     
     /**
-     * Sets on the Map XY 
+     * Methode pour modifier les elements sur la cartes/map
+     * l'élément
      * @param element
+     * l'axe des abscisses
      * @param x
+     * l'axe des ordonnées
      * @param y
      */
     void setOnTheMapXY(IElement element, final int x, final int y);
 
     /**
-     * Sets the mobile has changed.
+     * Methode pour faire des modifications sur le changement de l'element
      */
     void setMobileHasChanged();
 
     /**
-     * Gets the observable.
-     *
-     * @return the observable
+     * Methode d'obtention de la la classe observable.
+     *@see getObservable
+     * @return observable
      */
     Observable getObservable();
-
+    /**
+     * Methode pour verifier si le changement est correct
+     * @see isCorrect
+     * @return getHasChanged
+     */
     boolean isCorrect();
 
     List<Integer> getHasChanged();

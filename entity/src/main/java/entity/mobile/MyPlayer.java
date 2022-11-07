@@ -14,27 +14,30 @@ import entity.motionless.MotionlessElementsFactory;
  */
 public class MyPlayer extends Mobile {
 
-	/** The Constant SPRITE. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il fait rien */
 	private static final Sprite sprite = new Sprite('H', "pNope.png");
-	/** The Constant spriteTurnLeft. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il va vers la gauche */
 	private static final Sprite spriteTurnLeft = new Sprite('H', "pLeft.png");
-	/** The Constant spriteTurnRight. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il va vers la droite */
 	private static final Sprite spriteTurnRight = new Sprite('H', "pRight.png");
-	/** The Constant spriteTurnUp. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il va vers le haut */
 	private static final Sprite spriteTurnUp = new Sprite('H', "pUp.png");
-	/** The Constant spriteTurnDown. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il va vers le bas */
 	private static final Sprite spriteTurnDown = new Sprite('H', "pDown.png");
-	/** The Constant spriteDead. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il meurt */
 	private static final Sprite spriteDead = new Sprite('H', "pDead.png");
-	/** The Constant spriteWin. */
+	/** La declaration de la Constante SPRITE pour definir le joueur quand il gagne */
 	private static final Sprite spriteWin = new Sprite('H', "pWin.png");
 
-	/** The Diamond counter. */
+	/** Le compteur de diamand
+	 * @see nb_diamonds 
+	 */
 	private int nb_diamonds;
 
 	/**
-	 * Instantiates a new my player.
+	 * Instanciation d'un nouveau joueur
 	 *
+	 * @see MyPlayer
 	 * @param x   the x
 	 * @param y   the y
 	 * @param map the map
@@ -52,8 +55,8 @@ public class MyPlayer extends Mobile {
 
 
 	/**
-	 * move left for player
-	 * 
+	 * Methode pour deplacer le joueur vers la gauche
+	 * @see moveLeft
 	 */
 	@Override
 	public final void moveLeft() {
@@ -71,7 +74,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move right for player
+	 * Methode pour deplacer le joueur vers la droite
+	 * @see moveRight
 	 */
 	@Override
 	public final void moveRight() {
@@ -89,7 +93,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move down for player
+	 * Methode pour deplacer le joueur vers le bas
+	 * @see moveDown
 	 */
 	public final void moveDown() {
 		if ((getMap().getOnTheMapXY((getX()), (getY() + 1)).getPermeability() != Permeability.WALL) && (getMap().getOnTheMapXY((getX()), (getY() + 1))).getPermeability() != Permeability.BOULDER) {
@@ -104,7 +109,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * move up for the player
+	 * Methode pour deplacer le joueur vers le haut
+	 * @see moveUp
 	 */
 	public final void moveUp() {
 		if ((getMap().getOnTheMapXY((getX()), (getY() - 1)).getPermeability() != Permeability.WALL) && (getMap().getOnTheMapXY((getX()), (getY() - 1))).getPermeability() != Permeability.BOULDER) {
@@ -120,7 +126,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player dies
+	 * Methode pour verifier si le joueur est mort
+	 * @see die
 	 * 
 	 */
 	@Override
@@ -130,7 +137,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player wins
+	 * Methode pour verifier si le joueur a gagné
+	 * @see win
 	 *
 	 */
 	@Override
@@ -139,8 +147,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * player does nothing
-	 * 
+	 *  Methode pour verifier si le joueur ne fait rien
+	 * @see doNothing
 	 */
 	@Override
 	public final void doNothing() {
@@ -151,7 +159,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * removes ground
+	 * Methode pour creuser
+	 * @see dig
 	 */
 	public void dig() {
 		if (this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.DIGGABLE) {
@@ -162,7 +171,9 @@ public class MyPlayer extends Mobile {
 
 
 	/**
-	 * gets the diamond
+	 * Methode pour obtenir le diamand horizontalement
+	 * @see grabDiamond
+	 * @return nb_diamonds++
 	 */
 	public void grabDiamond() {
 		if (this.getMap().getOnTheMapXY(this.getX(), this.getY()).getPermeability() == Permeability.DIAMOND) {
@@ -172,7 +183,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * push rock to right
+	 * Methode permettant au joueur de pousser le roche vers la droite
+	 * @see pushBoulderRight
 	 */
 	public void pushBoulderRight() {
 		if (this.getMap().getOnTheMapXY(this.getX() + 1, this.getY()).getPermeability() == Permeability.BOULDER && this.getMap().getOnTheMapXY(this.getX() + 2, this.getY()).getPermeability() == Permeability.WALKABLE) {
@@ -184,7 +196,8 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * push rock to left
+	 * Methode permettant au joueur de pousser le roche vers la gauche
+	 * @see pushBoulderLeft
 	 */
 	public void pushBoulderLeft() {
 		if (this.getMap().getOnTheMapXY(this.getX() - 1, this.getY()).getPermeability() == Permeability.BOULDER && this.getMap().getOnTheMapXY(this.getX() - 2, this.getY()).getPermeability() == Permeability.WALKABLE) {
@@ -196,7 +209,9 @@ public class MyPlayer extends Mobile {
 	}
 
 	/**
-	 * gets the diamond
+	 * Methode pour obtenir le diamand
+	 * @see getDiamonds
+	 * @return nb_diamonds
 	 */
 	public int getDiamonds() {
 		return nb_diamonds;

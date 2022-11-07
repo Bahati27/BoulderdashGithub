@@ -4,15 +4,18 @@ import entity.Permeability;
 import entity.Sprite;
 
 /**
- * @author Laetitia
+ * <h1> La classe Ground </h1>
+ * @author Benjamin
  *
  */
 public class Ground extends MotionlessElement{
-	 /** The Constant SPRITE. */
+	/** La declaration de la Constante SPRITE pour definir le sol */
     private static final Sprite SPRITE = new Sprite(' ', "Ground.png");
 
     /**
-     * Instantiates a new ground.
+     * L'instationtion de l'élément sole
+	 * @see Ground
+     * @return DGGABLE
      */
     Ground() {
         super(SPRITE, Permeability.DIGGABLE);

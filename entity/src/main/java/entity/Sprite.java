@@ -6,31 +6,44 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * <h1>The Sprite class.</h1>
+ * <h1>la classe Sprite </h1>
  *
- * @author Laetitia
- * @version 0.1
+ * @author Benjamin
  */
 
 public class Sprite {
 
-	/** The image. */
+	/** L'image.
+	 * @return image */
     private Image   image;
 
-    /** The image name. */
+    /** 
+     * Le nom de l'image.
+     * @return imageName */
     private String  imageName;
 
-    /** The console image. */
+    /** Le console de l'image.
+     * @return consoleImage */
     private char    consoleImage;
 
-    /** The is image loaded. */
+    /** Le chargement de l'image.
+     * @return imageLoaded */
     private boolean imageLoaded;
-
+    /**
+     * Le constructeur de la classe Sprite avec 2 parametres
+     * @see Sprite
+     * @param character
+     * @param imageName
+     */
     public Sprite(final char character, final String imageName) {
         this.setConsoleImage(character);
         this.setImageName(imageName);
     }
-
+    /**
+     * Le constructeur de la classe Sprite
+     * @see Sprite
+     * @param character
+     */
     public Sprite(final char character) {
         this(character, "noimage.jpg");
     }
