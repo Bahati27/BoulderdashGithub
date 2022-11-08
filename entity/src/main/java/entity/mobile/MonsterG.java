@@ -18,7 +18,7 @@ public class MonsterG extends Mobile{
      * @see MonsterG
      * @return KILLABLE
 	 */
-	MonsterG() {
+	public MonsterG() {
 		super(SPRITE, Permeability.KILLABLE);
 	}
 

@@ -7,18 +7,18 @@ import java.sql.*;
 import java.util.ArrayList;
 
 /**
- * @author Laetitia
+ * @author Jean marie
  *
  */
 public class DAOMap {
 
 	/**
-	 * The connection
+	 * La connection
 	 */
 	private DBConnection myConnection;
 
 	/**
-	 * Instantiates DAO map
+	 * Le constructeur de DAOMap
 	 */
 	public DAOMap() throws ClassNotFoundException, SQLException {
 		this.myConnection = new DBConnection();
@@ -40,7 +40,7 @@ public class DAOMap {
 	}
 
 	/**
-	 * load the level
+	 * Chargement de niveau
 	 * @param id
 	 * @throws IOException
 	 */

@@ -29,6 +29,10 @@ public class SpriteTest {
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		boulder = new Boulder();
+		diamond = new Diamond();
+		monsterG = new MonsterG();
+		monsterR =new MonsterR();
+		
 	}
 	
 
@@ -37,14 +41,14 @@ public class SpriteTest {
 	 */
 	@Test
 	public void testgetImageName() {
-		final String SExpected1 = "Rock.png";
-		assertEquals(SExpected1, boulder.getSprite().getImageName());
-		final String SExpected2 = "diamond.png";
-		assertEquals(SExpected2, diamond.getSprite().getImageName());
-		final String SExpected3 = "greenMonster.png";
-		assertEquals(SExpected3, monsterG.getSprite().getImageName());
-		final String SExpected4 = "redMonster.png";
-		assertEquals(SExpected4, monsterR.getSprite().getImageName());
+		/*final String SExpected = "Rock.png";
+		assertEquals(SExpected, boulder.getSprite().getImageName());*/
+		final String SExpected1 = "diamond.png";
+		assertEquals(SExpected1, diamond.getSprite().getImageName());
+		final String SExpected2 = "greenMonster.png";
+		assertEquals(SExpected2, monsterG.getSprite().getImageName());
+		final String SExpected3 = "redMonster.png";
+		assertEquals(SExpected3, monsterR.getSprite().getImageName());
 	}
 
 	/**

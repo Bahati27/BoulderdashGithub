@@ -18,7 +18,7 @@ public class DBConnectionTest {
 	DBConnection DBC;
 	final String USER = "root";
 	final String PASSWD = "";
-	final String URL = "jdbc:mysql://localhost/jpublankproject1?autoReconnect=true&useSSL=false";
+	final String URL = "jdbc:mysql://localhost/jpublankproject?autoReconnect=true&useSSL=false";
 	
 
 	/**

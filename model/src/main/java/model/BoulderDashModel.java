@@ -8,29 +8,25 @@ import entity.mobile.IMobile;
 import entity.mobile.MyPlayer;
 
 /**
- * <h1>The Class BoulderDashModel.</h1>
+ * <h1>La classe BoulderDashModel.</h1>
  *
- * @author Laetitia
- *
- */
-/**
- * @author User
+ * @author Benjamin
  *
  */
 public class BoulderDashModel implements IModel {
 
-	/** The map. */
+	/** La carte. */
 	private IMap map;
 
-	/** The my player. */
+	/** Le joueur. */
 	private IMobile myPlayer;
 
 	/**
-	 * Instantiates a new boulder dash model.
+	 * Le constructeur de la classe BoulderDashModel.
 	 *
-	 * @param myPlayerStartX the my player start X
-	 * @param myPlayerStartY the my player start Y
-	 * @throws IOException ignals that an I/O exception has occurred.
+	 * @param myPlayerStartX la position de départ de mon joueur X
+	 * @param myPlayerStartY la position de départ de mon joueur Y
+	 * @throws IOException Signale qu'une exception s'est produite.
 	 */
 	public BoulderDashModel(final String mapFile, final int myPlayerStartX, final int myPlayerStartY) {
 		try {
@@ -46,7 +42,7 @@ public class BoulderDashModel implements IModel {
 	}
 
 	/**
-	 * Gets the map
+	 * Récupère la carte
 	 */
 	@Override
 	public final IMap getMap() {
@@ -54,16 +50,16 @@ public class BoulderDashModel implements IModel {
 	}
 
 	/**
-	 * Sets the map.
+	 * Modifie la carte.
 	 *
-	 * @param map the map to set
+	 * @param map la carte modifié
 	 */
 	private void setMap(final IMap map) {
 		this.map = map;
 	}
 
 	/**
-	 * gets the player
+	 * Récupère le joueur
 	 */
 	@Override
 	public final IMobile getMyPlayer() {
@@ -71,9 +67,9 @@ public class BoulderDashModel implements IModel {
 	}
 
 	/**
-	 * Sets the my player.
+	 * Modifie le joueur.
 	 *
-	 * @param myPlayer the player to set
+	 * @param myPlayer Le joueur modifié
 	 */
 	private void setMyPlayer(final IMobile myPlayer) {
 		this.myPlayer = myPlayer;

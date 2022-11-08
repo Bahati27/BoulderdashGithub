@@ -18,7 +18,7 @@ public class Diamond extends Mobile{
      * @see Diamand
      * @return DIAMOND
      */
-	 Diamond() {
+	 public Diamond() {
 		super(SPRITE, Permeability.DIAMOND);
 	}
 

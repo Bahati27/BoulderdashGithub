@@ -1,8 +1,7 @@
 package contract;
 /**
  * <h1> La classe enumeratrice UserOrder </h1>
- * @author Lyba
- *
+ * @author Jean Marie
  */
 public enum UserOrder {
 	UP,

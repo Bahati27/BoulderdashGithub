@@ -3,7 +3,12 @@ package entity;
 import java.awt.Image;
 
 public abstract class Element implements IElement {
-
+	
+	/**
+	 *   <h1> La classe Element </h1>
+	 * @author Benjamin
+	 *
+	 */
 
     /**
      * Le sprite
@@ -49,7 +54,7 @@ public abstract class Element implements IElement {
 
     /**
      * La methode permettant de retourner la permeabilité obetenu 
-     * @see fr.exia.insanevehicles.model.element.IElement#getPermeability()
+     * 
      */
     public final Permeability getPermeability() {
         return this.permeability;

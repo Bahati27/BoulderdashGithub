@@ -68,7 +68,7 @@ public abstract class Main {
             try {
                 databaseConnection = new DAOMap();
             } catch (ClassNotFoundException | SQLException e) {
-                JOptionPane.showMessageDialog(null, "Vous ne pouvez pas vous connecter à la base de donnéese!\nVoulez-vous lancer le jeu sans charger la carte.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Vous ne pouvez pas vous connecter à la base de données!\nVoulez-vous lancer le jeu sans charger la carte.", "BoulderDash - Echecs", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
