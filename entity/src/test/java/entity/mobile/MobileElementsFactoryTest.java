@@ -26,7 +26,7 @@ public class MobileElementsFactoryTest {
 
 	@Test
 	public void testCreateMonsterR() {
-		this.expected = 'X';
+		this.expected = 'R';
 		assertEquals(expected, MobileElementsFactory.createMonsterR().getSprite().getConsoleImage());
 	}
 

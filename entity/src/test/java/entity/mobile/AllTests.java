@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
-@SuiteClasses({ MobileElementsFactoryTest.class, MobileTest.class })
+@SuiteClasses({ MobileElementsFactoryTest.class })
 public class AllTests {
 
 }
